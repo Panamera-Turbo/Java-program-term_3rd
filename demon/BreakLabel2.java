@@ -8,13 +8,12 @@ class BreakLabel2 {
         System.out.println("Searching 30 in two dimensional int array..");
         
     Outer: for (int intOuter = 0; intOuter < intArray.length; intOuter++) {
-    Inner: for (int intInner = 0; intInner < intArray[intOuter].length; intInner++) {
-        if (intArray[intOuter][intInner] == 30) {
-            blnFound = true;
-            break Outer;
+            for (int intInner = 0; intInner < intArray[intOuter].length; intInner++) {
+            if (intArray[intOuter][intInner] == 30) {
+                blnFound = true;
+                break Outer;    //跳出标号所示的循环（即Outer的for循环结束）
+            }
         }
-        
-    }
     }
         
         if (blnFound == true)
