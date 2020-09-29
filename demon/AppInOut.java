@@ -12,6 +12,7 @@ public class AppInOut{
       new FrameInOut();
    }
 }
+
 /**
    源程序：FrameInOut.java 
 */
@@ -22,11 +23,11 @@ class FrameInOut extends Frame implements ActionListener{
    
    FrameInOut(){
       super("图形用户界面的Java Appliction程序");
-      prompt=new Label("请输入您的名字：");//创建标签
-      input=new TextField(6); //创建文本框
-      output=new TextField(20); //创建文本框
-      btn=new Button("关闭");//创建按钮
-      setLayout(new FlowLayout());//界面上的图形对象的布局策略
+      prompt=new Label("请输入您的名字：");     //创建标签
+      input=new TextField(6);                //创建文本框
+      output=new TextField(20);              //创建文本框
+      btn=new Button("关闭");                //创建按钮
+      setLayout(new FlowLayout());           //界面上的图形对象的布局策略
       add(prompt);
       add(input);
       add(output);

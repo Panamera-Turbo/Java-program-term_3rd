@@ -1,6 +1,5 @@
 //: OverloadingOrder.java
-// Overloading based on the order of
-// the arguments.
+// Overloading based on the order of the arguments.
 public class OverloadingOrder {
 	static void print(String s, int i) {
 		System.out.println("String: " + s + ", int: " + i);

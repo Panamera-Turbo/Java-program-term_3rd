@@ -13,7 +13,7 @@ public class ArithmeticOperand {
 		int h=g++;              //h=3, g=4
 		int i=++g;              //g=5, i=5
 		double j=18.4;
-		double k=j%4            //k=2.4
+		double k=j%4;            //k=2.4
 		System.out.println(" a = " + a);
 		System.out.println(" b = " + b);
 		System.out.println(" c = " + c);

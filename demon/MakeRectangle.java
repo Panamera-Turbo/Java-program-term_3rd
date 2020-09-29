@@ -1,5 +1,5 @@
 /**
-	Ô´³ÌĞò£ºMakeRectangle.java
+	æºæ–‡ä»¶ï¼šMakeRectangle.java
 */
 class Rectangle {
 	int width, height;

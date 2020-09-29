@@ -1,4 +1,4 @@
-package xxx.yyy;
+// package xxx.yyy;
 
 public class Hello {
    int x=10, y=100;
@@ -11,7 +11,7 @@ public class Hello {
       int z;
       Hello h = new Hello();
       System.out.println("h.x = "+ h.x + ",  h.y = " + h.y);
-      z = max(h.x, h.y);
+      z = h.max(h.x, h.y);
       System.out.println("Max value = "+z);
    }
 }
