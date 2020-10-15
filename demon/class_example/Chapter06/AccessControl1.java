@@ -1,14 +1,14 @@
 /*
-   Դ����AccessControl.java
+   源程序：AccessControl.java
 */
-package pack1;
+// package pack1;
 class Original{
 	private int nPrivate    =  1;
 	int nDefault    =  2;
 	protected int nProtected =  3;
 	public int nPublic     =  4;
 	void access() {
-		System.out.println("** ������, ���Է��ʵĳ�Ա: **");
+		System.out.println("** 在类中, 可以访问的成员: **");
 		System.out.println("   Private member = "+nPrivate);
 		System.out.println("   Default member = "+nDefault);
 		System.out.println("   Protected member = "+nProtected);
@@ -17,7 +17,7 @@ class Original{
 }
 class Derived extends Original{
 	void access(){
-		System.out.println("** ��������, ���Է��ʵĳ�Ա: **");
+		System.out.println("** 在子类中, 可以访问的成员: **");
 		//    System.out.println("   Private member = "+nPrivate);
 		System.out.println("   Default member = "+nDefault);
 		System.out.println("   Protected member = "+nProtected);
@@ -27,7 +27,7 @@ class Derived extends Original{
 class SamePackage{
 	void access(){
 		Original o = new Original();
-		System.out.println("** ��ͬ��������,�����ɷ��ʵĳ�Ա: **");
+		System.out.println("** 在同包的类中,其对象可访问的成员: **");
 		//    System.out.println("  Private member = "+o.nPrivate);
 		System.out.println("  Default member = "+o.nDefault);
 		System.out.println("  Protected member = "+o.nProtected);
