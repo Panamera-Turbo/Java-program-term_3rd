@@ -1,12 +1,11 @@
 /**
-   æºç¨‹åºï¼šAppInOut.java 
+   Ô´³ÌĞò£ºAppInOut.java 
 */
-
 import java.awt.*;
 import java.awt.event.*;
 
 /**
-   æºç¨‹åºï¼šAppInOut.java 
+   Ô´³ÌĞò£ºAppInOut.java 
 */
 public class AppInOut{
    public static void main(String args[]){
@@ -14,7 +13,7 @@ public class AppInOut{
    }
 }
 /**
-   æºç¨‹åºï¼šFrameInOut.java 
+   Ô´³ÌĞò£ºFrameInOut.java 
 */
 class FrameInOut extends Frame implements ActionListener{
    Label prompt;
@@ -22,25 +21,25 @@ class FrameInOut extends Frame implements ActionListener{
    Button btn;
    
    FrameInOut(){
-      super("å›¾å½¢ç”¨æˆ·ç•Œé¢çš„Java Applictionç¨‹åº");
-      prompt=new Label("è¯·è¾“å…¥æ‚¨çš„åå­—ï¼š");//åˆ›å»ºæ ‡ç­¾
-      input=new TextField(6); //åˆ›å»ºæ–‡æœ¬æ¡†
-      output=new TextField(20); //åˆ›å»ºæ–‡æœ¬æ¡†
-      btn=new Button("å…³é—­");//åˆ›å»ºæŒ‰é’®
-      setLayout(new FlowLayout());//ç•Œé¢ä¸Šçš„å›¾å½¢å¯¹è±¡çš„å¸ƒå±€ç­–ç•¥
+      super("Í¼ĞÎÓÃ»§½çÃæµÄJava Appliction³ÌĞò");
+      prompt=new Label("ÇëÊäÈëÄúµÄÃû×Ö£º");//´´½¨±êÇ©
+      input=new TextField(6); //´´½¨ÎÄ±¾¿ò
+      output=new TextField(20); //´´½¨ÎÄ±¾¿ò
+      btn=new Button("¹Ø±Õ");//´´½¨°´Å¥
+      setLayout(new FlowLayout());//½çÃæÉÏµÄÍ¼ĞÎ¶ÔÏóµÄ²¼¾Ö²ßÂÔ
       add(prompt);
       add(input);
       add(output);
       add(btn);
-      input.addActionListener(this); //å‘äº‹ä»¶ç›‘å¬è€…æ³¨å†Œ
-      btn.addActionListener(this); //å‘äº‹ä»¶ç›‘å¬è€…æ³¨å†Œ
+     input.addActionListener(this); //ÏòÊÂ¼ş¼àÌıÕß×¢²á
+      btn.addActionListener(this); //ÏòÊÂ¼ş¼àÌıÕß×¢²á
       setSize(300,200);
       show();
    }
 
    public void actionPerformed(ActionEvent e){
-      if(e.getSource()==input) //åˆ¤æ–­äº‹ä»¶æº
-         output.setText(input.getText()+",æ¬¢è¿è¿›å…¥Javaä¸–ç•Œ!");
+      if(e.getSource()==input) //ÅĞ¶ÏÊÂ¼şÔ´
+         output.setText(input.getText()+",»¶Ó­½øÈëJavaÊÀ½ç!");
       else{
          dispose();
          System.exit(0);

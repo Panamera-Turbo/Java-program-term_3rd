@@ -1,11 +1,11 @@
 /**
-   源锟斤拷锟斤拷AccessControl2.java
+   源程序：AccessControl2.java
 */
 package pack2;
 import pack1.Original;
 class Derived extends Original{
 	void access() {
-		System.out.println("** 锟节诧拷同锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷,锟缴凤拷锟绞的筹拷员: **");
+		System.out.println("** 在不同包的子类中,可访问的成员: **");
 		//    System.out.println("  Private member = "+nPrivate);
 		//    System.out.println("  Default member = "+nDefault);
 		System.out.println("  Protected member = "+nProtected);
@@ -15,7 +15,7 @@ class Derived extends Original{
 class AnotherPackage{
 	void access() {
 		Original o = new Original();
-		System.out.println("** 锟节诧拷同锟斤拷锟斤拷锟斤拷锟斤拷,锟缴凤拷锟绞的筹拷员: **");
+		System.out.println("** 在不同包的类中,可访问的成员: **");
 		//    System.out.println("   Private member = "+o.nPrivate);
 		//    System.out.println("   Default member = "+o.nDefault);
 		//    System.out.println("  Protected member = "+o.nProtected);

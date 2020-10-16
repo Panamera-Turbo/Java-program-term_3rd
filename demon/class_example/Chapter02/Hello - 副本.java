@@ -2,11 +2,9 @@ package xxx.yyy;
 
 public class Hello {
    int x=10, y=100;
-
    int max(int a, int b) {
       return (a>b)?a:b;
    }
-
    public static void main(String args[])  {
       int z;
       Hello h = new Hello();

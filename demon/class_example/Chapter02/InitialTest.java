@@ -6,8 +6,12 @@ class InitialTest {
 	boolean bInst;
 	void setData(int intV, boolean boolV){
 		varInstance = intV;
-		boolV = bInst;  //bInstèƒ½è‡ªåŠ¨åˆå§‹åŒ–ï¼Œæ‰€ä»¥ä¸ä¼šå‡ºé”™ã€‚
+		boolV = bInst;  //bInstÄÜ×Ô¶¯³õÊ¼»¯£¬ËùÒÔ²»»á³ö´í¡£
 		float x, y;
-		y = x;    //ç¼–è¯‘æ—¶ä¼šå‡ºé”™ï¼šxå°šæœªåˆå§‹åŒ–ã€‚
+		y = x;    //±àÒëÊ±»á³ö´í£ºxÉĞÎ´³õÊ¼»¯¡£
+	}
+	public static void main(String args[]) {
+		InitialTest test = new InitialTest();
+		test.setData(3, false);
 	}
 }

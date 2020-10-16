@@ -2,7 +2,7 @@
 	TestConditionArith.java
 */
 class TestConditionArith {
-	public static void main(String args[]{
+	public static void main(String args[]){
 		int i=10;
 		int j=10;
 		int k=0;

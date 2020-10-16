@@ -7,11 +7,16 @@ class BlankFinal {
 	final Poppet p; // Blank final handle
 	// Blank finals MUST be initialized
 	// in the constructor:
-	BlankFinal() {
+	/*BlankFinal() {
 		j = 1; // Initialize blank final
 		p = new Poppet();
 	}
 	BlankFinal(int x) {
+		j = x; // Initialize blank final
+		p = new Poppet();
+	}*/
+	void set(int x)
+	{
 		j = x; // Initialize blank final
 		p = new Poppet();
 	}
