@@ -384,7 +384,31 @@
     | 其他包中的子类 | 可见 | 可见 | 不可见 | 不可见
     | 其他包中的非子类 | 可见 | 不可见 | 不可见 | 不可见 |
 
+- **final**:
+  - final class:class不能再派生子类
+  - final int：数据不可改
+  - final int method：方法不可覆盖
 
+    - 空白的final可以且仅可以被构造函数赋值（没有被初始化的）
+
+
+
+- **abstract**
+  - 抽象类不可实例化，即不可new出来；但可以有构造函数（子类使用）
+  - 只有抽象类才能有抽象方法
+  - 抽象类里也可以有非抽象方法
+  - 抽象方法没有具体的实现，要依靠子类对其补齐（可理解为覆盖，覆盖时不需要abstract）
+  - static和abstract矛盾
+  - private和abstract矛盾
+
+
+- **Object**
+  - java内置的类
+  - Object类处于Java开发环境的类层次树的根部，处于Java类层的最高层的一个类，是所有类的超类。
+  - 其它所有的类都直接或间接地为它的子类。
+  - 该类定义了一些所有对象的最基本的状态和行为，包括与同类对象相比较，转化为字符串等
+
+- 只有父类->子类可以强制类型转换，子类->父类不需要
   - 使用原则：
     1. 大部分顶级用public
 
@@ -396,4 +420,108 @@
 
 
 ### 包
-- 
+
+
+<br><br><br>
+
+# 异常
+- 分类：
+  - Error：致命的
+  - Exception：非致命，可以捕获处理使程序继续运行，可分为运行时异常和非运行时异常
+
+## Exception
+- 运行时异常：<br>
+  RuntimeException类及其子类，一般由程序逻辑错误引起
+  | 异常类 | 含义 |
+  | --- | --- |
+  | ArrayIndexOutOfBoundsException | 数组下标越界 |
+  | ArithmeticException | 算数异常 |
+  | ArrayStoreException | 数组包含不兼容的值的抛出异常 |
+  | ClassCastException | 类型转换异常 |
+  | FileSystemNotFoundException | 文件系统未找到异常 |
+  | IllegalArgumentException | 非法参数 |
+  | IndexOutOfBoundsException | |
+  | NullPointerException | 空指针|
+  //--------------------------------------------
+  <br>// 书P192，待补充<br>
+  //--------------------------------------------
+
+- 非运行时异常：不处理就没法编译
+  | 异常类 | 含义 |
+  | --- | --- |
+  | ClassNotFoundException | 未找到类 |
+  | FileNotFoundException | 文件未找到 |
+  | IOException | 输入输出流异常 |
+  | TimeoutException | 操作超时 |
+  | SQLException | 操作数据库异常 |
+
+  - 对于非运行时异常，必须使用try···catch代码块处理或使用throw关键字抛出
+
+
+## 异常捕获
+1. try···catch代码块
+    ```
+    try{
+      //程序代码块
+    }
+    catch(ExceptionType e1){
+      //对e1的处理
+    }
+    catch(ExceptionType e){
+      //对e的处理，常见有：
+      //e.getMessage();     //有关异常的信息
+      //e.toString();       //有关异常的类型与性质
+      //e.printStackTrace() //获取异常发生时执行堆栈的内容
+    }
+    finally{
+      //代码，可选。不论程序是否异常都会执行
+      //常常放置一些诸如释放资源、关闭对象的代码
+    }
+    ```
+    - 注意：使用多个catch时，父类异常必须在子类异常后
+    - Exception是try块传给catch的类型，e是对象
+    - 除非含有以下三种情况，否则finally都会执行
+      1. finally里有异常
+      2. 前面的代码使用了System.exit()推出程序
+      3. 所在的线程死亡
+
+2. 抛出异常
+  - throws
+    <br>通常在方法被声明时用来指定方法可能抛出的异常，多个异常可用逗号分隔
+    ```
+    [返回值类型] [方法名](参数表) throws [异常类型名] {
+        //方法
+    } 
+    ```
+    - 使用throws为方法抛出异常时，若子类继承父类，子类重写方法抛出的异常应是父类异常（或其子类），除非throws异常是RuntimeException
+
+    - 若某方法抛出了异常，在调用时必须处理异常。若不想处理，可继续向上一级抛出，但最终必须处理
+
+  - throw
+    <br>通常在方法中制造一个异常，执行到throw时立即终止
+    ```
+    throw new [异常类型名](异常信息)
+    ```
+
+    - 通常用于在某种逻辑错误时人为抛出并终止
+
+    - throw常常用来抛出自定义异常
+
+  - throws和throw关键字的区别
+     - throws用在方法声明后面，表示抛出异常，由方法调用者处理；throw用在方法体内，用来制造异常
+     - throws声明抛出异常的类型，throw直接抛出异常实例
+     - throws表示表现异常的可能，throw一定有异常
+
+
+## 自定义异常
+- 通过继承Exception类自定义异常
+  1. 创建自定义类
+  2. throw出异常对象
+  3. 若在当前抛出异常的方法中处理异常，使用try···catch，否则在方法的声明处用throws关键字指明熬抛给方法调用者的异常，继续下一步
+  4. 在出现异常方法的调用者中捕获、处理异常
+
+###
+- 不要过多使用异常
+- 自定义异常可更详细的显示错误
+- 避免使用catch(Exception e)，防止所有异常都采用相同的处理方式
+- try···catch不能太大
