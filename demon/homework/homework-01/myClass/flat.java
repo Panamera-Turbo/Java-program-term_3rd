@@ -1,18 +1,18 @@
 package myClass;
-// import myClass.*;
+import myClass.*;
 
-public interface flat{
+public class flat extends producer{
     int kind = 0;    
 }
 
 //-------------------------------------------------------------------------
-class rectangle implements flat, product{
-    static int num;
-    static double area;
-    final int name = 1;
+class rectangle extends flat
+{//矩形类
+    private int num;
 
-    public void process(){
-        System.out.println("we have produced" + num + "new rectangle");
+    public void process(int x) {
+        this.num = x;
+        System.out.println("we have produced" + this.num + "new rectangle");
     }
 
     public void display(){
@@ -21,13 +21,14 @@ class rectangle implements flat, product{
 }
 
 //--------------------------------------------------------------------------
-class triangle implements flat, product{
-    static int num;
-    static double area;
-    final int name = 2;
+class triangle extends flat
+{//三角形类
+    private int num;
+    double area;
 
-    public void process(){
-        System.out.println("we have produced" + num + "triangle");
+    public void process(int x){
+        this.num = x;
+        System.out.println("we have produced" + this.num + "triangle");
     }
 
     public void display(){
@@ -36,13 +37,14 @@ class triangle implements flat, product{
 }
 
 //---------------------------------------------------------------------------
-class square implements flat, product{
-    static int num;
-    static double area;
-    final int name = 3;
+class square extends flat
+{//圆形类
+    private int num;
+    double area;
 
-    public void process(){
-        System.out.println("we have produced" + num + "new square");
+    public void process(int x){
+        this.num = x;
+        System.out.println("we have produced" + this.num + "new square");
     }
 
     public void display(){
