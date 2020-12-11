@@ -1,17 +1,31 @@
 package myClass;
 import myClass.*;
 
-public class flat extends producer{
-    int kind = 0;    
+public class flat extends product{
+    public flat(String name, int tag) {
+        super(name, tag);
+        // TODO Auto-generated constructor stub
+    }
+
+    final int kind = 1;
 }
 
 //-------------------------------------------------------------------------
 class rectangle extends flat
 {//矩形类
     private int num;
+    private double lenth;
+    private double width;
+    double area;
 
-    public void process(int x) {
-        this.num = x;
+    rectangle(int num, double len, double wid){
+        this.num = num;
+        this.width = wid;
+        this.lenth = len; 
+        this.area = len * wid;
+    }
+
+    public void process() {
         System.out.println("we have produced" + this.num + "new rectangle");
     }
 
@@ -24,8 +38,17 @@ class rectangle extends flat
 class triangle extends flat
 {//三角形类
     private int num;
+    double a;
+    double b;
+    double c;
     double area;
 
+    triangle(int num, double a, double b, double c){
+        this.num = num;
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
     public void process(int x){
         this.num = x;
         System.out.println("we have produced" + this.num + "triangle");
@@ -37,13 +60,21 @@ class triangle extends flat
 }
 
 //---------------------------------------------------------------------------
-class square extends flat
+class circle extends flat
 {//圆形类
     private int num;
+    final double PI = 3.14159;
+    double r;
     double area;
 
-    public void process(int x){
-        this.num = x;
+    circle(int num, double r){
+        this.num = num;
+        this.r = r;
+        this.area = PI * r * r;
+    }
+
+    public void process(){
+        // this.num = x;
         System.out.println("we have produced" + this.num + "new square");
     }
 

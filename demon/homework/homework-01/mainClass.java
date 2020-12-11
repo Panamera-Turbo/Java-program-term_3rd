@@ -6,6 +6,6 @@ import myClass.*;
 
 public class mainClass {
     public static void main(String[] args) {
-        System.out.println("type in what you wanna do:\n1:");
+        System.out.println("it is runnning now");
     }
 }
