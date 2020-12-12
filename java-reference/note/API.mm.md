@@ -19,4 +19,12 @@
 - 从键盘输入：System.in
     - nextInt():获取输入的int（10进制）
     - next():获取输入字符串
-    - 
+
+
+### Random类
+- 创建伪随机数
+- nextInt():获取输入的int（10进制）
+- nextInt(int a):获取[0, a-1]的整数
+
+### 
+<!-- TODO -->
