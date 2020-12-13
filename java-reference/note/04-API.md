@@ -3,7 +3,7 @@
 1. 看帮助文档
 2. 找索引，看到输入框
 3. 输入查找内容
-4. 看包。除了java.lang都要导包
+4. 看包。除了`java.lang`都要导包
 5. 学习使用并应用
 
 ## 常用API
@@ -16,15 +16,15 @@
     3. 使用
 
 ### Scanner-输入
-- 从键盘输入：System.in
-    - nextInt():获取输入的int（10进制）
-    - next():获取输入字符串
+- 从键盘输入：`System.in`
+    - `nextInt()`:获取输入的int（10进制）
+    - `next()`:获取输入字符串
 
 
 ### Random类
 - 创建伪随机数
-- nextInt():获取输入的int（10进制）
-- nextInt(int a):获取[0, a-1]的整数
+- `nextInt()`:获取输入的int（10进制）
+- `nextInt(int a)`:获取[0, a-1]的整数
 
 ### 
 <!-- TODO -->
