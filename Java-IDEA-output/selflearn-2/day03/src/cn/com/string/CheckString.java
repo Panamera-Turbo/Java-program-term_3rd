@@ -23,8 +23,24 @@ public class CheckString {
         return inputStr;
     }
 
-    public void setInputStr() {
+    void setInputStr() {
         Scanner sc = new Scanner(System.in);
         this.inputStr = sc.toString();
+        System.out.println("Input a string");
+
+        int countLow = 0;
+        int countUp = 0;
+        int countNum = 0;
+        int countElse = 0;
+
+        char[] charArray = inputStr.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char ch = charArray[i];
+            if('A' <= ch && ch <= 'Z') countUp++;
+            else if('a' <= ch && ch <= 'z') countLow++;
+            else if('0' <= ch && ch <= '9') countNum++;
+            else countElse++;
+        }
+//        System.out.println();
     }
 }
